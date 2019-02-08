@@ -3,6 +3,12 @@
 ## Why centralized logging Needed?
 
 I worked with micro services architecture which is looked like below. Each micro service is having its own log folder & file.
+
+<h1 align="center">
+  <br>
+  <img src="https://github.com/jaykishanstax/ELK/blob/master/Image/micro_service_Arc.png">
+</h1>
+
 ### Suppose we have multiple machine for each micro-service and each service is having multiple instance. 
 ###### For example we have 2 machine X and Y. each service (4 micro-service) is deployed on both machine and having their own log folder under each machine. So In total we have 8 folder & file which store log only for micro-service, other logs like nginx, application logs, system and access logs for each machine include so many logging which is kind of unstructured data. 
 
