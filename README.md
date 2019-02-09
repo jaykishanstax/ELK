@@ -46,6 +46,13 @@ Centralize logging is one of the solution with multiple implementation way, some
 
 # Configuration for  ELK: 
 
+## Centralized logging architecture look like below ::
+
+<h1 align="center">
+  <br>
+  <img src="https://github.com/jaykishanstax/ELK/blob/master/Image/ELK_arc.png">
+</h1>
+
 ## 1.	Elastic:  
 - a.	Version 6.1.4
 - b.	Instal from below link 
