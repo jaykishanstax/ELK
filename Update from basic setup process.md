@@ -31,6 +31,36 @@ multiline.match: after
 #### 4. Multiline pattern should be common so that it can be used into Grok processor to genrate index in elastic.
 
 
+
+ ## Basic use of ELASTIC
+ 
+- it will create index pattern based on incoming log from filebeat.
+
+- We can add INGEST NODE and Grok Filter processing to manage log and indexing easily .
+
+- Below command will use to generate grok filter
+
+```
+PUT /_ingest/pipeline/logpipeline
+{
+  "description" : "Pipeline for logs from filebeat",
+  "processors": [
+    {
+      "grok": {
+        "field": "message",
+        "patterns": ["(?m)%{TIMESTAMP_ISO8601:logtime}%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}%{THREAD:thread}%{SPACE}%{USER:user}%{SPACE}---%{SPACE}%{GREEDYDATA:class}%{SPACE}:%{GREEDYDATA:message}"],
+        "pattern_definitions": {
+            "THREAD" : "[[a-zA-Z0-9-]]+",
+            "USER" : "[[a-zA-Z0-9:]]+"
+          }
+      }
+    }
+  ]
+}
+```
+
+
+
 ## Basic use of KIBANA 
 
 ##### 1.  check all Index from Console view using below command :
