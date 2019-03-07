@@ -59,8 +59,8 @@ Centralize logging is one of the solution with multiple implementation way, some
 - - i.	https://www.elastic.co/guide/en/elasticsearch/reference/6.1/rpm.html
 - c.	Below step to install ELASTIC 
 - - i.	rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-- - ii.	wget https://artifacts.elastic.co/downloads/kibana/kibana-6.1.4-x86_64.rpm
-- - iii.	sudo rpm --install kibana-6.1.4-x86_64.rpm
+- - ii.	wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.4.rpm
+- - iii.	sudo rpm --install elasticsearch-6.1.4.rpm
 - - iv.	YML file under:  cd /etc/elasticsearch/
 - - v.	sudo /bin/systemctl daemon-reload
 - - vi.	sudo /bin/systemctl enable elasticsearch.service
