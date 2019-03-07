@@ -122,3 +122,12 @@ Clear all directory
 Rm -rf  /usr/share/kibana/
 sudo rm -rf elasticsearch-6.4.2.tar.gz etc.
 ```
+
+
+### filebeat in local :
+```
+sudo chown root filebeat.yml
+sudo ./filebeat -e -c filebeat.yml -d "publish"
+OR
+sudo service filebeat start
+```
