@@ -59,6 +59,28 @@ PUT /_ingest/pipeline/logpipeline
 }
 ```
 
+OR 
+
+```
+PUT /_ingest/pipeline/log_pipeline1
+{
+  "description": "Parsing the application logs",
+  "processors": [
+    {
+      "grok": {
+        "field": "message",
+        "patterns": [
+          "%{TIMESTAMP_ISO8601:timestamp} %{GREEDYMULTILINE:stackTrace}"
+        ],
+        "pattern_definitions": {
+          "GREEDYMULTILINE": "(.|\n)*"
+        },
+        "ignore_missing": true
+      }
+    }
+  ]
+}
+```
 
 
 ## Basic use of KIBANA 
